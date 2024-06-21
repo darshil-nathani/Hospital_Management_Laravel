@@ -57,7 +57,7 @@ class PatientController extends Controller
         // $data['user_id'] = auth()->id();
         $user = Patient::create($request->all()+ ['user_id' => auth()->id()]);
         if($user){
-            return redirect()->route('patient.create');
+            return redirect()->route('patient.index');
         }
     }
 
@@ -83,7 +83,7 @@ class PatientController extends Controller
     public function update(Request $request, patient $patient)
     {
         $patient->update( $request->all() + ['user_id' => auth()->id()]);
-        return redirect()->route('dashboard');
+        return redirect()->route('patient.index');
     }
 
     /**
@@ -92,6 +92,6 @@ class PatientController extends Controller
     public function destroy(patient $patient)
     {
         $patient->delete();
-        return redirect()->route('dashboard');
+        return redirect()->route('patient.index');
     }
 }

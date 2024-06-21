@@ -42,7 +42,7 @@ class DoctorController extends Controller
         $user['image'] = $filename;
         $data = doctor::create($user);
         if($user){
-            return redirect()->route('doctor.create');
+            return redirect()->route('doctor.index');
         }
     }
 

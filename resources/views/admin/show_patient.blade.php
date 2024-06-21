@@ -1,6 +1,9 @@
 @extends('template.layout')
 @section('content')
 <body>
+    @section('nav')
+    {{ Auth::user()->hospital_name }}
+    @endsection
     <div class="container mt-5">
         <div class="text-center mb-4">
             <h1 class="display-4 animate__animated animate__fadeInDown text-primary shadow-sm p-3 mb-5 bg-white rounded">Welcome, {{ Auth::user()->hospital_name }}</h1>
@@ -9,8 +12,7 @@
         <hr class="my-4">
 
         <div class="d-flex justify-content-end mb-4">
-            <a class="btn btn-outline-danger rounded-pill mx-2 shadow-sm" href="{{ route('logout') }}">Logout</a>
-            <a class="btn btn-outline-primary rounded-pill mx-2 shadow-sm" href="{{ route('dashboard') }}">Back</a>
+            <a class="btn btn-outline-primary rounded-pill mx-2 shadow-sm px-5" href="{{ route('patient.index') }}">Back</a>
         </div>
 
         <div class="card shadow-lg animate__animated animate__fadeIn">

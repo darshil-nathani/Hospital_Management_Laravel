@@ -1,7 +1,9 @@
 @extends('template.layout')
 @section('content')
 <body>
-
+    @section('nav')
+    {{ Auth::user()->hospital_name }}
+    @endsection
 
     <div class="container mt-5">
         <div class="text-center mb-4">
@@ -9,6 +11,9 @@
             <p class="lead animate__animated animate__fadeInUp">Your Comprehensive Healthcare Dashboard</p>
         </div>
         <hr class="my-4">
+        <div class="d-flex justify-content-end mb-4">
+            <a class="btn btn-outline-primary rounded-pill mx-2 shadow-sm" href="{{ route('dashboard') }}">Go to Dashboard</a>
+        </div>
         <div class="table-responsive animate__animated animate__fadeInUp">
             <table class="table table-hover table-striped table-sm">
                 <thead class="table-dark">
@@ -33,13 +38,13 @@
                                 <td>{{$d->gender}}</td>
                                 <td>{{$d->phone_number}}</td>
                                 <td>{{$d->email}}</td>
-                                <td><a class="btn btn-sm btn-info" href="{{ route('patient.show', $d->id) }}">View</a></td>
-                                <td><a class="btn btn-sm btn-warning" href="{{route('patient.edit', $d->id)}}">Edit</a></td>
+                                <td><a class="btn btn-outline-primary rounded mx-2  shadow-sm" style="width: 80%" href="{{ route('patient.show', $d->id) }}">View</a></td>
+                                <td><a class="btn btn-outline-info rounded mx-2  shadow-sm" style="width: 80%" href="{{route('patient.edit', $d->id)}}">Edit</a></td>
                                 <td>
                                     <form action="{{ route('patient.destroy', $d->id) }}" method="post">
                                     @csrf
                                     @method('delete')
-                                        <input type="submit" class="btn btn-danger btn-sm" value="Delete">
+                                        <input type="submit" class="btn btn-outline-danger rounded mx-2  shadow-sm" style="width: 80%" value="Delete">
                                     </form>
                                 </td>
                             </tr>

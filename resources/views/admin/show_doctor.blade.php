@@ -1,6 +1,9 @@
 @extends('template.layout')
 @section('content')
 <body>
+    @section('nav')
+    {{ Auth::user()->hospital_name }}
+    @endsection
     <div class="container mt-5">
         <div class="text-center mb-4">
             <h1 class="display-4 animate__animated animate__fadeInDown text-primary shadow-sm p-3 mb-5 bg-white rounded">Welcome, {{ Auth::user()->hospital_name }}</h1>
@@ -9,17 +12,17 @@
         <hr class="my-4">
 
         <div class="d-flex justify-content-end mb-4">
-            <a class="btn btn-outline-primary rounded-pill mx-2 shadow-sm" href="{{ route('doctor.index') }}">Back</a>
+            <a class="btn btn-outline-primary rounded-pill mx-2 shadow-sm px-5" href="{{ route('doctor.index') }}">Back</a>
         </div>
 
         <div class="card shadow-lg animate__animated animate__fadeIn">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-4 text-center">
-                        <img src="{{ asset('images/' . $doctor->image) }}" class="rounded-circle shadow" style="height: 200px; width: 200px;" alt="{{ $doctor->doctor_name }}">
+                        <img src="{{ asset('images/' . $doctor->image) }}" class="rounded-circle shadow" style="height: 200px; width: 200px; margin-top: 15%" alt="{{ $doctor->doctor_name }}">
                     </div>
                     <div class="col-md-8">
-                        <h3 class="card-title text-center text-primary">{{ $doctor->doctor_name }}'s Profile</h3>
+                        <h3 class="card-title text-center text-primary" style="margin-right: 23%">{{ $doctor->doctor_name }}'s Profile</h3>
                         <div class="row mt-4">
                             <div class="col-md-6">
                                 <p><strong>Doctor Name:</strong> {{ $doctor->doctor_name }}</p>

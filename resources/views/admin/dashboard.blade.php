@@ -1,7 +1,9 @@
 @extends('template.layout')
 @section('content')
 <body>
-
+    @section('nav')
+    {{ Auth::user()->hospital_name }}
+    @endsection
 
     <div class="container mt-5">
         <div class="text-center mb-4">

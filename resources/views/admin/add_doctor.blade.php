@@ -1,12 +1,17 @@
 @extends('template.layout')
 @section('content')
 <body>
+    @section('nav')
+    {{ Auth::user()->hospital_name }}
+    @endsection
     <div class="container mt-5">
         <div class="text-center mb-4">
             <h1 class="display-4 animate__animated animate__fadeInDown text-primary shadow-sm p-3 mb-5 bg-white rounded">Add Doctor</h1>
         </div>
         <hr class="my-4">
-
+        <div class="d-flex justify-content-end mb-4">
+            <a class="btn btn-outline-primary rounded-pill mx-2 shadow-sm" href="{{ route('dashboard') }}">Go to Dashboard</a>
+        </div>
         <form action="{{route('doctor.store')}}" method="post" enctype="multipart/form-data" class="shadow p-4 rounded bg-light">
             @csrf
             <div class="row mt-2">
@@ -82,7 +87,6 @@
             <div class="form-group row mt-4">
                 <div class="col text-center">
                     <button type="submit" class="btn btn-success btn-lg shadow-sm">Submit</button>
-                    <a href="{{route('dashboard')}}" class="btn btn-primary btn-lg shadow-sm">Back</a>
                 </div>
             </div>
         </form>

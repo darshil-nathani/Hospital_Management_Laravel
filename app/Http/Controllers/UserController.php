@@ -32,6 +32,8 @@ class UserController extends Controller
 
         if(Auth::attempt($data)){
             return redirect()->route('dashboard');
+        }else{
+            return redirect()->route('login')->with('message','inccroct user/password');
         }
     }
 

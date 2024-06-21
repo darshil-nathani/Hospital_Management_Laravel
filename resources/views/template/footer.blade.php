@@ -3,9 +3,8 @@
         <div class="row">
             <div class="col-md-4 mx-auto mb-4">
                 <h5 class="text-uppercase font-weight-bold">Contact Us</h5>
-                <p class="mb-0">123 Hospital Way, City, Country</p>
-                <p class="mb-0">Phone: +123456789</p>
-                <p>Email: info@example.com</p>
+                <p class="mb-0">Phone: 7698849647</p>
+                <p>Email: darshilnathani1412@gmail.com</p>
             </div>
             <div class="col-md-4 mx-auto mb-4">
                 <h5 class="text-uppercase font-weight-bold">Useful Links</h5>
